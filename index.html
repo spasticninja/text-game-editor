@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Text Game Editor</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+  <div class="container" id="content">
+    <h1>Text Game Editor</h1>
+    <p>Welcome to the Text Game Editor! Start with you story title and add story elements.</p>
+
+    <div class="row">
+      <div class="col-md-4">
+        <h2>About your story</h2>
+        <form id="form-title">
+          <div>
+            <label for="story-title">Story Title:</label>
+            <input type="text" id="story-title" name="story-title">
+          </div>
+          <div>
+            <input type="submit" value="Update Title">
+          </div>
+        </form>
+      </div>
+      <div class="col-md-8">
+        <h2>Build your story</h2>
+        <form id="form-story-node">
+          <div>
+            <label for="story-text">Story Text</label>
+            <textarea row="6" id="story-text" name="story-text"></textarea>
+          </div>
+          <div>
+            <label for="story-choice-A">Choose Destination Node A</label>
+            <select name="story-choice-A" id="story-choice-A">
+              <option value="NA" selected="selected">NA</option>
+            </select>
+          </div>
+          <div>
+            <label for="story-choice-B">Choose Destination Node B</label>
+            <select name="story-choice-B" id="story-choice-B">
+              <option value="NA" selected="selected">NA</option>
+            </select>
+          </div>
+          <div>
+            <input type="submit" value="Add Story Node">
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <div id="story-list"></div>
+      </div>
+    </div>
+  </div>
+  <script src="node_modules/zepto/dist/zepto.js" charset="utf-8"></script>
+  <script src="src/editor.js" charset="utf-8"></script>
+</body>
+</html>

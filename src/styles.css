@@ -1,0 +1,138 @@
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+.container {
+  max-width: 1070px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+/* THE GRID */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+[class*='col-'] {
+  float: left;
+  padding-right: 20px;
+}
+[class*='col-']:last-of-type {
+  padding-right: 0;
+}
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+  width: 100%;
+}
+.col-sm-11,
+.col-md-11,
+.col-lg-11 {
+  width: 91.67%;
+}
+.col-sm-10,
+.col-md-10,
+.col-lg-10 {
+  width: 83.33%;
+}
+.col-sm-9,
+.col-md-9,
+.col-lg-9 {
+  width: 75%;
+}
+.col-sm-8,
+.col-md-8,
+.col-lg-8 {
+  width: 66.67%;
+}
+.col-sm-7,
+.col-md-7,
+.col-lg-7 {
+  width: 58.33%;
+}
+.col-sm-6,
+.col-md-6,
+.col-lg-6 {
+  width: 50%;
+}
+.col-sm-4,
+.col-md-4,
+.col-lg-4 {
+  width: 33.33%;
+}
+.col-sm-3,
+.col-md-3,
+.col-lg-3 {
+  width: 25%;
+}
+.col-sm-2,
+.col-md-2,
+.col-lg-2 {
+  width: 16.67%;
+}
+.col-sm-1,
+.col-md-1,
+.col-lg-1 {
+  width: 8.33%;
+}
+@media screen and (max-width: 1024px) {
+  .col-lg-1,
+  .col-lg-2,
+  .col-lg-3,
+  .col-lg-4,
+  .col-lg-5,
+  .col-lg-6,
+  .col-lg-7,
+  .col-lg-8,
+  .col-lg-9,
+  .col-lg-10,
+  .col-lg-11,
+  .col-lg-12 {
+    width: 100%;
+  }
+  [class*='col-lg-'] {
+    padding-right: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .col-md-1,
+  .col-md-2,
+  .col-md-3,
+  .col-md-4,
+  .col-md-5,
+  .col-md-6,
+  .col-md-7,
+  .col-md-8,
+  .col-md-9,
+  .col-md-10,
+  .col-md-11,
+  .col-md-12 {
+    width: 100%;
+  }
+  [class*='col-md-'] {
+    padding-right: 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  .col-sm-1,
+  .col-sm-2,
+  .col-sm-3,
+  .col-sm-4,
+  .col-sm-5,
+  .col-sm-6,
+  .col-sm-7,
+  .col-sm-8,
+  .col-sm-9,
+  .col-sm-10,
+  .col-sm-11,
+  .col-sm-12 {
+    width: 100%;
+  }
+  [class*='col-sm-'] {
+    padding-right: 0;
+  }
+}
