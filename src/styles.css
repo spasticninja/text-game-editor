@@ -2,13 +2,47 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+body {
   font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  color: #333;
+}
+h1 {
+  font-size: 2.5em;
+  margin: 10px 0 15px 0;
+}
+h2 {
+  font-size: 2.25em;
+  margin: 10px 0 15px 0;
+}
+h3 {
+  font-size: 2.0em;
+  margin: 10px 0 15px 0;
+}
+h4 {
+  font-size: 1.75em;
+  margin: 10px 0 15px 0;
+}
+p {
+  font-size: 1em;
+  margin-bottom: 15px;
+}
+blockquote {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  font-size: 0.8em;
 }
 
 .container {
   max-width: 1070px;
   padding: 15px;
   margin: 0 auto;
+}
+.divider {
+  border-bottom: 2px solid #ccc;
+  margin: 20px 0;
 }
 
 /* THE GRID */
@@ -135,4 +169,31 @@
   [class*='col-sm-'] {
     padding-right: 0;
   }
+}
+
+/* FORMS */
+form label {
+  clear:left;
+  display:block;
+  font-size: 0.8em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+form input[type="text"],
+form textarea,
+form select {
+  width: 100%;
+  margin-bottom: 15px;
+  font-size: 1em;
+  padding: 7px;
+  border: 2px solid #ccc;
+  border-radius: 0;
+}
+form textarea {
+  min-height: 100px;
+}
+
+/*Helpers*/
+.hidden {
+  display: none;
 }

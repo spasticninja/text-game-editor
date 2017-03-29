@@ -1,16 +1,16 @@
-var story_session = {
-  story_meta: {},
+var storySession = {
+  storyMeta: {},
   story: []
 };
 
 function updateTitle() {
   var title = $('#story-title').val();
   // Add meta data to meta
-  story_session.story_meta.title = title;
-  console.log(story_session);
+  storySession.storyMeta.title = title;
+  console.log(storySession);
 }
 function addNode() {
-  var id = story_session.story.length;
+  var id = storySession.story.length;
   var text = $('#story-text').val();
   var choiceA = $('#story-choice-A').val() || null;
   var choiceB = $('#story-choice-B').val() || null;
@@ -20,16 +20,16 @@ function addNode() {
     choices: [choiceA, choiceB]
   }
 
-  story_session.story.push(node);
-  console.log(story_session);
+  storySession.story.push(node);
+  console.log(storySession);
 }
 function formClear() {
-  $('#story-text').val('');
+  $('#story-text').val('').focus();
   $('#story-choice-A').val('NA');
   $('#story-choice-B').val('NA');
 }
 function addNodeOptions() {
-  var selOptions = story_session.story;
+  var selOptions = storySession.story;
   var starterOption = '<option value="NA" selected="selected">NA</option>'
   var selectA = $('#story-choice-A');
   var selectB = $('#story-choice-B');
@@ -51,18 +51,44 @@ function addNodeOptions() {
 }
 function displayOptions() {
   var listArea = $('#story-list');
-  var storyNodes = story_session.story;
+  var storyNodes = storySession.story;
 
   listArea.empty();
 
-  if (story_session.story_meta.title) {
-    listArea.append('<h2>' + story_session.story_meta.title + '</h2>');
+  if (storySession.storyMeta.title) {
+    listArea.append('<h2>' + storySession.storyMeta.title + '</h2>');
   }
-  listArea.append('<ol class="story-list"></ol>');
+
+  listArea.append('<ul class="story-list"></ul>');
   storyNodes.forEach(function(elm) {
     var node = '<li>' + elm.text + '</li>';
-    listArea.children('ol').append(node);
+    listArea.children('ul').append(node);
   });
+}
+//export the storySession as a downloaded JSON file
+function exportStorySession(storySession) {
+  const downloadSelector = '#exportLink';
+  const myStorySessionString = JSON.stringify(storySession);
+  const b64StorySession = 'data:application/json;charset=utf-8,' + encodeURIComponent(myStorySessionString);
+
+  const downloadHref = document.querySelector(downloadSelector);
+  downloadHref.download = 'story_session.json';
+  downloadHref.href = b64StorySession;
+  downloadHref.click();
+}
+
+//return either an Error object or a decoded story session
+function importStorySession(storySessionText) {
+  const decodedStorySession = decodeURIComponent(storySessionText);
+  let storySession = null;
+
+  try {
+    storySession = JSON.parse(decodedStorySession);
+  } catch (e) {
+    return e;
+  }
+
+  return storySession;
 }
 
 $('#form-title').submit(function(e) {
