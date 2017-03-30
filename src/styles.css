@@ -10,18 +10,18 @@ body {
 }
 h1 {
   font-size: 2.5em;
-  margin: 10px 0 15px 0;
+  margin: 15px 0 15px 0;
 }
 h2 {
-  font-size: 2.25em;
+  font-size: 2em;
   margin: 10px 0 15px 0;
 }
 h3 {
-  font-size: 2.0em;
+  font-size: 1.75em;
   margin: 10px 0 15px 0;
 }
 h4 {
-  font-size: 1.75em;
+  font-size: 1.5em;
   margin: 10px 0 15px 0;
 }
 p {
@@ -37,16 +37,32 @@ blockquote {
 
 .container {
   max-width: 1070px;
-  padding: 15px;
+  padding: 0 15px;
   margin: 0 auto;
 }
-.divider {
-  border-bottom: 2px solid #ccc;
-  margin: 20px 0;
+.story-builder {
+  background: #eee;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+.story-builder h2 {
+  margin-top: 0;
+}
+
+.footer-bar {
+  background-color: #000;
+  text-align: right;
+  max-width: 1070px;
+  padding: 15px;
+  margin: 20px auto 0;
+}
+.footer-bar a {
+  color: #fff;
 }
 
 /* THE GRID */
-.row:after {
+.row:after,
+.form-group:after {
   content: "";
   display: table;
   clear: both;
@@ -191,6 +207,13 @@ form select {
 }
 form textarea {
   min-height: 100px;
+}
+input[type="submit"] {
+  -webkit-appearance: none;
+  border-radius: 0;
+  padding: 7px 10px;
+  font-weight: bold;
+  border: 2px solid #eee;
 }
 
 /*Helpers*/
